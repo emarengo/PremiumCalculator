@@ -48,5 +48,5 @@ To start a webpack server type:
 npm start
 ```
 
-Navigate to [http://localhost:8080/#/home][PlDb] to use the app.
+Navigate to http://localhost:8080/#/home to use the app.
 

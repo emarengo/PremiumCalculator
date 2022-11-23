@@ -20,16 +20,6 @@
     "premium": 64
   },
   {
-    "id": 19253132,
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "January",
-    "ageRangeMin": 20,
-    "ageRangeMax": 65,
-    "premium": 65
-  },
-  {
     "id": 2233,
     "carrier": "weew",
     "plan": "A",
@@ -68,5 +58,15 @@
     "ageRangeMin": "12",
     "ageRangeMax": "123",
     "premium": "332"
+  },
+  {
+    "id": 1669238754980,
+    "carrier": "aserty",
+    "plan": "A",
+    "state": "AZ",
+    "monthOfBirth": "March",
+    "ageRangeMin": "1",
+    "ageRangeMax": "23",
+    "premium": "442"
   }
 ]

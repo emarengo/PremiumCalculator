@@ -5,9 +5,9 @@ export async function deletePlan(id, loader) {
   myHeaders.append("Content-Type", "application/json");
 
   const payload = JSON.stringify({
-    "data": {
-      "id": id
-    }
+    data: {
+      id: id,
+    },
   });
   var requestOptions = {
     method: "POST",
@@ -23,7 +23,6 @@ export async function deletePlan(id, loader) {
           throw new Error(text);
         });
       } else {
-
         return res.json();
       }
     })

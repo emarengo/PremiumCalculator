@@ -1,5 +1,5 @@
-export function usaStatesOptions(){
-    return `<option value="AL">AL</option>
+export function usaStatesOptions() {
+  return `<option value="AL">AL</option>
     <option value="AK">AK</option>
     <option value="AZ">AZ</option>
     <option value="AR">AR</option>
@@ -49,5 +49,5 @@ export function usaStatesOptions(){
     <option value="WA">WA</option>
     <option value="WV">WV</option>
     <option value="WI">WI</option>
-    <option value="WY">WY</option>`
+    <option value="WY">WY</option>`;
 }

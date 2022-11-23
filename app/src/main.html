@@ -10,72 +10,84 @@
   </head>
   <body>
     <div class="page">
-        <nav id="global-nav" class="global-nav" role="navigation">
+      <nav id="globalNav" class="globalNav" role="navigation">
+        <ul class="menu">
+          <li id="shortcutsNav" class="nav">
+            <ul class="panel">
+              <li>
+                <a href="#/home"
+                  ><img class="logo" src="../assets/logo.png"
+                /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <header class="main-header">
+        <section id="alertBox"></section>
+
+        <h1 class="branding inline">
+          <a href="#/home">PREMIUM CALCULATOR</a>
+        </h1>
+        <nav role="navigation" class="mainNav">
           <ul class="menu">
-            <li id="shortcuts-nav" class="nav">
-                <ul class="panel">
-                <li>
-                    <a href="#/home"><img class="logo" src="../assets/logo.png"/></a>
-                  </li>
-              </ul>
+            <li class="top-level">
+              <a href="#/query">Query plans</a>
+            </li>
+            <li class="top-level">
+              <a href="#/admin">Create or delete plans</a>
             </li>
           </ul>
         </nav>
-        <header class="main-header">
-            <section id="alertBox"></section>
-        
-          <h1 class="branding inline">
-            <a href="#/home">PREMIUM CALCULATOR</a>
-          </h1>
-          <nav role="navigation" class="main-nav">
-            <ul class="menu">
-                <li class="top-level">
-                    <a href="#/query">Query plans</a>
-                  </li>
-                  <li class="top-level">
-                    <a href="#/admin">Create or delete plans</a>
-                  </li>
-              </ul>
-          </nav>
-        </header>
-        <div class="page-wrapper">      
-            <section id="root"></section>
-        </div>
-        <div class="loader-spinner" id="spinner">
-            <svg class="spinner" viewBox="0 0 50 50">
-                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-              </svg>
-            </div>
-        <footer>
-          <div id="bottom">
-            <section id="section-info">
-              <div class="organization-info">
-                <div class="vcard">
-                  <h2>
-                    <a href="./"><img class="logo" src="../assets/logo.png"/></a>
-                  </h2>
-                  <p class="contact-info">
-                    <span class="org fn">© 2022 MG LLC D/B/A TRANZACT. ALL RIGHTS RESERVED.</span>
-                  </p>
-                  <p class="phone-numbers">
-                    <span class="tel-admission">
-                      <span class="label">Phone:</span>
-                      <a href="tel:+201.461.5665" class="tel">201.461.5665</a>
-                    </span>
-                    <br>
-                    <span class="tel-campus-safety">
-                      <span class="label">Email:</span>
-                      <a href="email:press@tranzact.net" class="tel">press@tranzact.net</a>
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-            </section>
-          </div>
-        </footer>
+      </header>
+      <div class="pageWrapper">
+        <section id="root"></section>
       </div>
-    
+      <div class="loaderSpinner" id="spinner">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle
+            class="path"
+            cx="25"
+            cy="25"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          ></circle>
+        </svg>
+      </div>
+      <footer>
+        <div id="bottom">
+          <section id="sectionInfo">
+            <div class="organizationInfo">
+              <div class="vcard">
+                <h2>
+                  <a href="./"><img class="logo" src="../assets/logo.png" /></a>
+                </h2>
+                <p class="contactInfo">
+                  <span class="org fn"
+                    >© 2022 MG LLC D/B/A TRANZACT. ALL RIGHTS RESERVED.</span
+                  >
+                </p>
+                <p class="phone-numbers">
+                  <span class="tel-admission">
+                    <span class="label">Phone:</span>
+                    <a href="tel:+201.461.5665" class="tel">201.461.5665</a>
+                  </span>
+                  <br />
+                  <span class="tel-campus-safety">
+                    <span class="label">Email:</span>
+                    <a href="email:press@tranzact.net" class="tel"
+                      >press@tranzact.net</a
+                    >
+                  </span>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+
     <script src="./functions/index.js"></script>
   </body>
 </html>

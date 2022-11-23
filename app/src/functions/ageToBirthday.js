@@ -1,5 +1,5 @@
 export function ageToBirthday(age) {
-    var date = new Date(Date.now()); 
+  var date = new Date(Date.now());
 
-    return Math.abs(date.getUTCFullYear() - age)
+  return Math.abs(date.getUTCFullYear() - age);
 }

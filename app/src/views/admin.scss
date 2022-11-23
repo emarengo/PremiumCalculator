@@ -1,19 +1,21 @@
-.admin-container {
+.adminContainer {
   margin: 5vh 0 5vh 0;
   min-height: 50vh;
   font-family: "Raleway", Helvetica, Arial, sans-serif !important;
 }
 
-.query-form-all-plans {
+.queryFormAllPlans {
   margin: 2vh 0 2vh 0;
   display: flex;
   flex-direction: column;
 }
-.query-result-item-delete, .query-result-item-delete:hover{
+
+.queryResultItemDelete,
+.queryResultItemDelete:hover {
   font-weight: bold;
   font-size: 0.7rem;
   cursor: pointer;
-  width: 10%;  
+  width: 10%;
   height: 10%;
   background-color: transparent;
   border: 1px solid;
@@ -26,11 +28,12 @@
   align-items: center;
 }
 
-.query-result-item-create, .query-result-item-create:hover{
+.queryResultItemCreate,
+.queryResultItemCreate:hover {
   font-weight: bold;
   font-size: 0.7rem;
   cursor: pointer;
-  width: 10%;  
+  width: 10%;
   height: 10%;
   background-color: transparent;
   border: 1px solid;
@@ -42,73 +45,78 @@
   justify-content: center;
   align-items: center;
 }
+
 @media (min-width: 600px) {
-  .query-result-item input, .query-result-item select {
-    max-width:90px;
+  .queryResultItem input,
+  .queryResultItem select {
+    max-width: 90px;
   }
-  
-  .form-item {
+
+  .formItem {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin-bottom: 5px;
   }
-  .query-form {
+
+  .queryForm {
     margin: 2vh 0 2vh 0;
     display: grid;
     grid-template-columns: auto auto;
   }
 }
-.query-result-plans {
+
+.queryResultPlans {
   margin: 5vh 0 2vh 0;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto;
 }
 
-.createPlanButton{
+.createPlanButton {
   margin: 0 0 5vh 0;
   cursor: pointer;
   background-image: url("../../assets/dropdown_arrow_down.svg");
   background-size: 15px;
   background-repeat: no-repeat;
-  background-position: calc(100% - 13px)
+  background-position: calc(100% - 13px);
 }
 
-.createPlanButtonOpen{
+.createPlanButtonOpen {
   margin: 0 0 5vh 0;
   cursor: pointer;
   background-image: url("../../assets/dropdown_arrow_up.svg");
   background-size: 15px;
   background-repeat: no-repeat;
-  background-position: calc(100% - 13px)
+  background-position: calc(100% - 13px);
 }
 
-.planCreationForm{
+.planCreationForm {
   margin: 0 0 4vh 0;
 }
 
-.plan-creation-container{
+.planCreationContainer {
   display: flex;
-  
-}
-.plan-creation-container input{
- width: 80px;
 }
 
-.plan-creation-container select{
+.planCreationContainer input {
+  width: 80px;
+}
+
+.planCreationContainer select {
   width: 120px;
- }
-
-.plan-creation-item{
- margin: 1px;
- flex: 50%;
- align-items: center;
- justify-content: center;
- position: relative;
 }
-.plan-creation-item input:focus + label,
-.plan-creation-item input:valid + label {
+
+.planCreationItem {
+  margin: 1px;
+  flex: 50%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.planCreationItem input:focus + label,
+.planCreationItem input:valid + label {
   width: 60px;
   height: 20px;
   font-size: 11px;
@@ -116,7 +124,7 @@
   top: -5px;
 }
 
-.plan-creation-item label {
+.planCreationItem label {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   position: absolute;
   cursor: text;

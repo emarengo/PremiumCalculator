@@ -1,5 +1,5 @@
-export function allMonthsOptions(){
-    return `
+export function allMonthsOptions() {
+  return `
     <option value="*">All</option>
     <option value="January">January</option>
     <option value="February">February</option>
@@ -13,5 +13,5 @@ export function allMonthsOptions(){
     <option value="October">October</option>
     <option value="November">November</option>
     <option value="December">December</option>
-    `
+    `;
 }

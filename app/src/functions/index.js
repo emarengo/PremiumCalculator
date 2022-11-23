@@ -1,12 +1,12 @@
- const slidingMenu = () => {
-  var nav = document.getElementById("global-nav");
+const slidingMenu = () => {
+  var nav = document.getElementById("globalNav");
   var navItems = nav.getElementsByClassName("nav");
-  
+
   activateMenus(navItems);
-  
+
   function activateMenus(menus) {
     for (var i = 0; i < menus.length; i++) {
-      menus[i].addEventListener("click", function( event ) {
+      menus[i].addEventListener("click", function (event) {
         var panel = this.getElementsByClassName("panel")[0];
         if (this.classList.contains("open")) {
           if (!this.contains(event.target)) {
@@ -24,23 +24,22 @@
     }
     clickOutsideMenus(menus);
   }
-  
+
   function closePanels(menus) {
     for (var i = 0; i < menus.length; i++) {
       menus[i].classList.remove("open");
     }
   }
-  
+
   function clickOutsideMenus(menus) {
-      document.addEventListener("click", function( event ) {
+    document.addEventListener("click", function (event) {
       var openMenu = nav.getElementsByClassName("open")[0];
-      if(openMenu !== undefined) {
+      if (openMenu !== undefined) {
         if (!openMenu.contains(event.target)) {
           closePanels(menus);
         }
       }
     });
   }
-  
-  }
-  slidingMenu()
+};
+slidingMenu();

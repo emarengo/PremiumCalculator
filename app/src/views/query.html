@@ -1,26 +1,26 @@
-<div id="queryForm" class="query-container">
+<div id="queryForm" class="queryContainer">
     <h2>Query plans</h2>
     <p>Filter all the available plans based on the potential client information.</p>
     <p>Please fill all the fields to enable the "Get Premium" button:</p>
-    <div class="query-form">
-       <div class="grid-item">
-          <div class="form-item">
+    <div class="queryForm">
+       <div class="gridItem">
+          <div class="formItem">
              <input min="1872-01-01" type="date" id="birthdate" autocomplete="off" required value="test">
              <label for="birthdate">Birthdate</label>
           </div>
        </div>
-       <div class="grid-item">
-          <div class="form-item">
+       <div class="gridItem">
+          <div class="formItem">
              <section id="state"></section>
           </div>
        </div>
-       <div class="grid-item">
-          <div class="form-item">
+       <div class="gridItem">
+          <div class="formItem">
              <section id="plans"></section>
           </div>
        </div>
-       <div class="grid-item">
-          <div class="form-item">
+       <div class="gridItem">
+          <div class="formItem">
              <input type="number"onkeydown="return event.keyCode !== 69 && event.keyCode !== 190 && event.keyCode !== 110 && event.keyCode !== 189" id="age" required>
              <label for="age">Age</label>
           </div>
@@ -29,7 +29,7 @@
     
     <button id="submitButton" title="Search for a premium" disabled>GET PREMIUM</button>
  </div>
- <div id="queryResult" class="query-container hidden">
+ <div id="queryResult" class="queryContainer hidden">
     <h2>
     Results (<span id="resultLength"></span>) </h1>
     <div id="requestAgain" class="requestAgain">MAKE ANOTHER SEARCH <img class="requestAgainIcon" src="../../assets/search_again.png" /></div>

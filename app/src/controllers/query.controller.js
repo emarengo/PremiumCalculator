@@ -1,11 +1,10 @@
 import query from "../views/query.html";
-import "../views/query.scss";
 import { birthdayToAge } from "../functions/birthdayToAge";
 import { ageToBirthday } from "../functions/ageToBirthday";
 import { request } from "../functions/methods/request";
 import { getPlans } from "../functions/methods/getPlans";
 import { renderResults } from "../functions/renderResults";
-import { usaStatesOptions } from "../functions/usaStatesOptions";
+import "../views/query.scss";
 
 const loader = document.getElementById("spinner");
 
@@ -34,7 +33,6 @@ const renderStates = (rawPlans) => {
   const state = [
     ...new Set(
       rawPlans.map((rawPlan) => {
-    
         return rawPlan.state;
       })
     ),
@@ -63,13 +61,13 @@ export default async () => {
   //return if there aren't plans available
   if (!rawPlans.length) {
     divElement.innerHTML =
-      "<div class='query-form'><p>Currently there aren't plans available. Please create some.</p></div>";
+      "<div class='queryForm'><p>Currently there aren't plans available. Please create some.</p></div>";
     return divElement;
   }
 
   divElement.innerHTML = query;
 
-  //Query view selectors
+  //query view selectors
   const queryForm = divElement.querySelector("#queryForm");
   const queryResult = divElement.querySelector("#queryResult");
   const alertBox = document.getElementById("alertBox");
@@ -103,7 +101,7 @@ export default async () => {
   const renderedPlansDrowpdown = renderPlans(rawPlans);
   const renderedStateDrowpdown = renderStates(rawPlans);
 
-  //event listeners
+  //event listeners for the query view
   birthdateInput.addEventListener("change", (event) => {
     ageInput.value = birthdayToAge(event.target.value);
     enableSubmitButton();
@@ -145,12 +143,14 @@ export default async () => {
       '[name="result-field-annual"]'
     );
 
+    //logic for fequency handler
     resultFieldPremium.forEach((field, index) => {
       resultFieldMonthly[index].value = field.value * event.target.value;
       resultFieldAnnual[index].value = field.value * 12 * event.target.value;
     });
   });
 
+  //logic for the age input
   ageInput.oninput = function () {
     if (this.value > 150) {
       this.value = this.value.slice(0, 2);

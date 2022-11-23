@@ -1,5 +1,5 @@
 export async function request(payload, loader) {
-    loader.style.display = "block"
+  loader.style.display = "block";
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -18,13 +18,13 @@ export async function request(payload, loader) {
           throw new Error(text);
         });
       } else {
-        loader.style.display = "none"
+        loader.style.display = "none";
 
         return res.json();
       }
     })
     .catch((error) => {
-        loader.style.display = "none"
+      loader.style.display = "none";
       return error;
     });
 }

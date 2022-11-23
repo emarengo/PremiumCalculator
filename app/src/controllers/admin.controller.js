@@ -5,9 +5,12 @@ import { renderPlans } from "../functions/renderPlans";
 import { renderPlansCreationForm } from "../functions/renderPlansCreationForm";
 import { createPlan } from "../functions/methods/createPlan";
 import "../views/admin.scss";
+
+//selector for loader
 const loader = document.getElementById("spinner");
 
 export default async () => {
+  //turns off loader
   loader.style.display = "none";
 
   const divElement = document.createElement("div");
@@ -18,6 +21,7 @@ export default async () => {
   const planCreationButton = divElement.querySelector("#planCreationButton");
   const planCreationForm = divElement.querySelector("#planCreationForm");
 
+  //load plans
   const plans = await getPlans(loader);
   const renderedResults = renderPlans(plans);
 
@@ -25,11 +29,11 @@ export default async () => {
 
   const deletePlanSelector = divElement.querySelectorAll('[name="deletePlan"]');
 
-  //event listener
-
+  //event listeners for the admin view
   planCreationButton.addEventListener("click", async (event) => {
     const display = planCreationForm.style.display;
     if (display == "block") {
+      //styles for the plan creation dropdown
       planCreationButton.classList.add("createPlanButton");
       planCreationButton.classList.remove("createPlanButtonOpen");
       planCreationButton.innerHTML = "CLICK TO OPEN THE PLAN CREATION FORM";
@@ -43,6 +47,7 @@ export default async () => {
       planCreationButton.classList.add("createPlanButtonOpen");
       planCreationForm.innerHTML = createPlanForm;
 
+      //selectors for the plan creation form
       const carrierInput = divElement.querySelector("#carrierInput");
       const planInput = divElement.querySelector("#planInput");
       const stateInput = divElement.querySelector("#stateInput");
@@ -60,6 +65,7 @@ export default async () => {
         premiumInput,
       ];
 
+      //listeners to validate the plan creation form fields
       ageMinInput.addEventListener("input", (event) => {
         ageMaxInput.setAttribute("min", event.target.value);
       });
@@ -90,6 +96,7 @@ export default async () => {
           return;
         }
 
+        //payload from ticket creation form
         const payload = {
           data: {
             id: Date.now(),

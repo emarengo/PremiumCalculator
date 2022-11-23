@@ -1,0 +1,136 @@
+[
+  {
+    "carrier": "qwerty",
+    "plan": "B",
+    "state": "NY",
+    "monthOfBirth": "September",
+    "ageRangeMin": 21,
+    "ageRangeMax": 45,
+    "premium": 150
+  },
+  {
+    "carrier": "qwerty",
+    "plan": "B",
+    "state": "AK",
+    "monthOfBirth": "January",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 200.5
+  },
+  {
+    "carrier": "qwerty",
+    "plan": "A",
+    "state": "AL",
+    "monthOfBirth": "*",
+    "ageRangeMin": 18,
+    "ageRangeMax": 65,
+    "premium": 120.99
+  },
+  {
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },{
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "*",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },
+  {
+    "carrier": "aserty",
+    "plan": "A",
+    "state": "IA",
+    "monthOfBirth": "January",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  },
+  {
+    "carrier": "aserty",
+    "plan": "A",
+    "state": "KS",
+    "monthOfBirth": "January",
+    "ageRangeMin": 46,
+    "ageRangeMax": 65,
+    "premium": 144
+  }
+]

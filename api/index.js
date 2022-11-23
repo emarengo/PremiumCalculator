@@ -3,7 +3,7 @@ const cors = require("cors");
 const fs = require("fs");
 const app = express();
 const port = 50000;
-const plans = JSON.parse(fs.readFileSync("../plans.json"));
+const plans = JSON.parse(fs.readFileSync(__dirname + "/plans.json"));
 
 app.use(
   express.urlencoded({
@@ -30,7 +30,7 @@ app.post("/addPlan", (req, res) => {
       throw new Error("Plan is required");
     }
     plans.push(body);
-    fs.writeFile("../plans.json", JSON.stringify(plans, null, 2), finished);
+    fs.writeFile("./plans.json", JSON.stringify(plans, null, 2), finished);
     return res.status(200).send("sucess");
   } catch (error) {
     return res.status(400).send(error.message);
@@ -70,24 +70,24 @@ app.post("/calculatePlan", (req, res) => {
     }
 
     const filteredPlansByState = plans.filter((singlePlan) => {
-      return singlePlan.state == requestedState;
+      return singlePlan.state == requestedState || singlePlan.state == "*";
     });
     if (!filteredPlansByState.length) {
-      throw new Error(`There are no plans for the selected state.`);
+      throw new Error(`There aren't plans for the selected state.`);
     }
 
     const filteredPlansByPlan = filteredPlansByState.filter((singlePlan) => {
         return singlePlan.plan == requestedPlan;
       });
       if (!filteredPlansByPlan.length) {
-        throw new Error(`There are no plans for the selected type of plan.`);
+        throw new Error(`There aren't plans for the selected plan letter.`);
       }
 
       const filteredPlansByAge = filteredPlansByPlan.filter((singlePlan) => {
         return requestedAge >= singlePlan.ageRangeMin  && requestedAge <= singlePlan.ageRangeMax;
       });
       if (!filteredPlansByAge.length) {
-        throw new Error(`There are no plans for the selected age.`);
+        throw new Error(`There aren't plans for the selected age.`);
       }
       res.status(200).send(filteredPlansByAge);
   } catch (error) {

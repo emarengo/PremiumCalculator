@@ -1,6 +1,7 @@
 import {pages} from "../controllers/index"
 const { home, admin, query, notFound } = pages
 let content = document.getElementById("root");
+
 const router = async (route) => {
     content.innerHTML = "";
 

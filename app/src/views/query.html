@@ -1,47 +1,46 @@
-
 <div id="queryForm" class="query-container">
-  
-    <h2>Query plans</h1>
+    <h2>Query plans</h2>
     <p>Filter all the available plans based on the potential client information.</p>
     <p>Please fill all the fields to enable the "Get Premium" button:</p>
-    
     <div class="query-form">
-            <div class="grid-item">
-            <div class="form-item">
-                <input min="1872-01-01" type="date" id="birthdate" autocomplete="off" required value="test">
-                <label for="birthdate">Birthdate</label>
-            </div>       
-            </div>
-              <div class="grid-item">
-                <div class="form-item">
-                    <section id="state"></section>
-
-                </div>
-              </div>  
-               <div class="grid-item">
-                <div class="form-item">
-                    <section id="plans"></section>
-                </div>
-              </div>
-              <div class="grid-item">
-                <div class="form-item">
-                  <input type="number"onkeydown="return event.keyCode !== 69" id="age" required>
-                  <label for="age">Age</label>
-                </div>
-              </div>
+       <div class="grid-item">
+          <div class="form-item">
+             <input min="1872-01-01" type="date" id="birthdate" autocomplete="off" required value="test">
+             <label for="birthdate">Birthdate</label>
+          </div>
+       </div>
+       <div class="grid-item">
+          <div class="form-item">
+             <section id="state"></section>
+          </div>
+       </div>
+       <div class="grid-item">
+          <div class="form-item">
+             <section id="plans"></section>
+          </div>
+       </div>
+       <div class="grid-item">
+          <div class="form-item">
+             <input type="number"onkeydown="return event.keyCode !== 69 && event.keyCode !== 190 && event.keyCode !== 110 && event.keyCode !== 189" id="age" required>
+             <label for="age">Age</label>
+          </div>
+       </div>
     </div>
-    <button id="submitButton" disabled>GET PREMIUM</button>
-</div>
-<div id="queryResult" class="query-container hidden">
-    <h2>Results (<span id="resultLength"></span>) </h1>
-        <p>View the result prices based on the selected period. The standard period is by month.</p>
+    
+    <button id="submitButton" title="Search for a premium" disabled>GET PREMIUM</button>
+ </div>
+ <div id="queryResult" class="query-container hidden">
+    <h2>
+    Results (<span id="resultLength"></span>) </h1>
+    <div id="requestAgain" class="requestAgain">MAKE ANOTHER SEARCH <img class="requestAgainIcon" src="../../assets/search_again.png" /></div>
+    <p>View the result prices based on the selected period. The standard period is by month.</p>
     <select name="period" id="period">
-        <option value="" selected disabled>Select a period</option>
-        <option value="WI">WI</option>
-        <option value="WY">WY</option>
-        </select>
-        <hr class="divider">
+       <option value="" selected disabled>Select a period</option>
+       <option value="1">Montly</option>
+       <option value="3">Quarterly</option>
+       <option value="6">Semi-Annually</option>
+       <option value="12">Annually</option>
+    </select>
+    <hr class="divider">
     <section id="resultSection"></section>
-   
-
-</div>
+ </div>

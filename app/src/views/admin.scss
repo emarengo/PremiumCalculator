@@ -1,0 +1,134 @@
+.admin-container {
+  margin: 5vh 0 5vh 0;
+  min-height: 50vh;
+  font-family: "Raleway", Helvetica, Arial, sans-serif !important;
+}
+
+.query-form-all-plans {
+  margin: 2vh 0 2vh 0;
+  display: flex;
+  flex-direction: column;
+}
+.query-result-item-delete, .query-result-item-delete:hover{
+  font-weight: bold;
+  font-size: 0.7rem;
+  cursor: pointer;
+  width: 10%;  
+  height: 10%;
+  background-color: transparent;
+  border: 1px solid;
+  margin: auto;
+  border-radius: 50px;
+  color: white;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.query-result-item-create, .query-result-item-create:hover{
+  font-weight: bold;
+  font-size: 0.7rem;
+  cursor: pointer;
+  width: 10%;  
+  height: 10%;
+  background-color: transparent;
+  border: 1px solid;
+  margin: auto;
+  border-radius: 50px;
+  color: white;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .query-result-item input, .query-result-item select {
+    max-width:90px;
+  }
+  
+  .form-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .query-form {
+    margin: 2vh 0 2vh 0;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+.query-result-plans {
+  margin: 5vh 0 2vh 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+
+.createPlanButton{
+  margin: 0 0 5vh 0;
+  cursor: pointer;
+  background-image: url("../../assets/dropdown_arrow_down.svg");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 13px)
+}
+
+.createPlanButtonOpen{
+  margin: 0 0 5vh 0;
+  cursor: pointer;
+  background-image: url("../../assets/dropdown_arrow_up.svg");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 13px)
+}
+
+.planCreationForm{
+  margin: 0 0 4vh 0;
+}
+
+.plan-creation-container{
+  display: flex;
+  
+}
+.plan-creation-container input{
+ width: 80px;
+}
+
+.plan-creation-container select{
+  width: 120px;
+ }
+
+.plan-creation-item{
+ margin: 1px;
+ flex: 50%;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+}
+.plan-creation-item input:focus + label,
+.plan-creation-item input:valid + label {
+  width: 60px;
+  height: 20px;
+  font-size: 11px;
+  left: 3px;
+  top: -5px;
+}
+
+.plan-creation-item label {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  width: 30px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all 0.3s ease;
+}

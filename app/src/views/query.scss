@@ -6,8 +6,8 @@
 
 .query-form {
   margin: 5vh 0 2vh 0;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .query-result {
@@ -19,7 +19,8 @@
 .query-result-item {
   display: flex;
   position: relative;
-  margin-bottom: 5px;}
+  margin-bottom: 5px;
+}
 
 *,
 *:focus {
@@ -35,7 +36,7 @@
 }
 
 .form-item {
-  display: flex;
+  flex: 50%;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -45,6 +46,7 @@
 input {
   display: block;
   width: 400px;
+  max-width: 320px;
   height: 50px;
   background: transparent;
   border-radius: 3px;
@@ -67,6 +69,7 @@ input[type=date] {
 select {
   display: block;
   width: 433px;
+  max-width: 350px;
   height: 50px;
   border-radius: 3px;
   border: solid 1px #ccc;
@@ -157,4 +160,49 @@ hr.hr-1 {
   height: 0.5px;
   color: gray;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.grid-item {
+  padding: 5px;
+}
+
+.requestAgain{
+  position:relative;
+  float: right;
+  right: 15vh;
+  text-decoration: underline;
+  cursor: pointer ;
+}
+
+.requestAgainIcon{
+ width: 20px;
+}
+
+@media (min-width: 600px) {
+  input, select {
+    max-width: 500px;
+  }
+  .form-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .query-form {
+    margin: 5vh 0 2vh 0;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

@@ -1,136 +1,72 @@
 [
   {
-    "carrier": "qwerty",
-    "plan": "B",
-    "state": "NY",
-    "monthOfBirth": "September",
-    "ageRangeMin": 21,
-    "ageRangeMax": 45,
-    "premium": 150
-  },
-  {
-    "carrier": "qwerty",
-    "plan": "B",
-    "state": "AK",
-    "monthOfBirth": "January",
+    "id": 7123132,
+    "carrier": "aserty",
+    "plan": "*",
+    "state": "TX",
+    "monthOfBirth": "*",
     "ageRangeMin": 46,
     "ageRangeMax": 65,
-    "premium": 200.5
+    "premium": 653
   },
   {
-    "carrier": "qwerty",
+    "id": 1823132,
+    "carrier": "aserty",
+    "plan": "C",
+    "state": "*",
+    "monthOfBirth": "April",
+    "ageRangeMin": 0,
+    "ageRangeMax": 18,
+    "premium": 64
+  },
+  {
+    "id": 19253132,
+    "carrier": "aserty",
+    "plan": "B",
+    "state": "*",
+    "monthOfBirth": "January",
+    "ageRangeMin": 20,
+    "ageRangeMax": 65,
+    "premium": 65
+  },
+  {
+    "id": 2233,
+    "carrier": "weew",
     "plan": "A",
+    "state": "CO",
+    "monthOfBirth": "March",
+    "ageRangeMin": 20,
+    "ageRangeMax": 65,
+    "premium": 62
+  },
+  {
+    "id": 255233,
+    "carrier": "weew",
+    "plan": "C",
+    "state": "CA",
+    "monthOfBirth": "December",
+    "ageRangeMin": 60,
+    "ageRangeMax": 65,
+    "premium": 624
+  },
+  {
+    "id": 1669235601097,
+    "carrier": "Ernesto",
+    "plan": "G",
     "state": "AL",
-    "monthOfBirth": "*",
-    "ageRangeMin": 18,
-    "ageRangeMax": 65,
-    "premium": 120.99
+    "monthOfBirth": "February",
+    "ageRangeMin": "12",
+    "ageRangeMax": "123",
+    "premium": "313"
   },
   {
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },{
-    "carrier": "aserty",
-    "plan": "B",
-    "state": "*",
-    "monthOfBirth": "*",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },
-  {
-    "carrier": "aserty",
-    "plan": "A",
-    "state": "IA",
-    "monthOfBirth": "January",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
-  },
-  {
-    "carrier": "aserty",
-    "plan": "A",
-    "state": "KS",
-    "monthOfBirth": "January",
-    "ageRangeMin": 46,
-    "ageRangeMax": 65,
-    "premium": 144
+    "id": 1669235755361,
+    "carrier": "Ernes2",
+    "plan": "L",
+    "state": "AK",
+    "monthOfBirth": "March",
+    "ageRangeMin": "12",
+    "ageRangeMax": "123",
+    "premium": "332"
   }
 ]

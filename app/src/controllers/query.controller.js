@@ -2,9 +2,10 @@ import query from "../views/query.html";
 import "../views/query.scss";
 import { birthdayToAge } from "../functions/birthdayToAge";
 import { ageToBirthday } from "../functions/ageToBirthday";
-import { request } from "../functions/request";
-import { getPlans } from "../functions/getPlans";
+import { request } from "../functions/methods/request";
+import { getPlans } from "../functions/methods/getPlans";
 import { renderResults } from "../functions/renderResults";
+import { usaStatesOptions } from "../functions/usaStatesOptions";
 
 const loader = document.getElementById("spinner");
 
@@ -17,7 +18,7 @@ const renderPlans = (rawPlans) => {
     ),
   ];
   const plansOptions = plans.sort().map((p) => {
-    return ` <option value="${p}">${p}</option>`;
+    return ` <option value="${p}">${p == "*" ? "All plans" : p}</option>`;
   });
 
   return `
@@ -30,86 +31,26 @@ const renderPlans = (rawPlans) => {
 };
 
 const renderStates = (rawPlans) => {
-  let allStatesAreNeeded = false;
   const state = [
     ...new Set(
       rawPlans.map((rawPlan) => {
-        if (rawPlan.state == "*") {
-          allStatesAreNeeded = true;
-          return;
-        }
+    
         return rawPlan.state;
       })
     ),
   ];
-  const stateOptions = state.sort().map((p) => {
-    return ` <option value="${p}">${p}</option>`;
-  });
 
-  if (allStatesAreNeeded) {
-    return `<select name="state">
-     <option value="" selected disabled>Select a state</option>
-        <option value="AL">AL</option>
-        <option value="AK">AK</option>
-        <option value="AZ">AZ</option>
-        <option value="AR">AR</option>
-        <option value="CA">CA</option>
-        <option value="CO">CO</option>
-        <option value="CT">CT</option>
-        <option value="DE">DE</option>
-        <option value="DC">DC</option>
-        <option value="FL">FL</option>
-        <option value="GA">GA</option>
-        <option value="HI">HI</option>
-        <option value="ID">ID</option>
-        <option value="IL">IL</option>
-        <option value="IN">IN</option>
-        <option value="IA">IA</option>
-        <option value="KS">KS</option>
-        <option value="KY">KY</option>
-        <option value="LA">LA</option>
-        <option value="ME">ME</option>
-        <option value="MD">MD</option>
-        <option value="MA">MA</option>
-        <option value="MI">MI</option>
-        <option value="MN">MN</option>
-        <option value="MS">MS</option>
-        <option value="MO">MO</option>
-        <option value="MT">MT</option>
-        <option value="NE">NE</option>
-        <option value="NV">NV</option>
-        <option value="NH">NH</option>
-        <option value="NJ">NJ</option>
-        <option value="NM">NM</option>
-        <option value="NY">NY</option>
-        <option value="NC">NC</option>
-        <option value="ND">ND</option>
-        <option value="OH">OH</option>
-        <option value="OK">OK</option>
-        <option value="OR">OR</option>
-        <option value="PA">PA</option>
-        <option value="RI">RI</option>
-        <option value="SC">SC</option>
-        <option value="SD">SD</option>
-        <option value="TN">TN</option>
-        <option value="TX">TX</option>
-        <option value="UT">UT</option>
-        <option value="VT">VT</option>
-        <option value="VA">VA</option>
-        <option value="WA">WA</option>
-        <option value="WV">WV</option>
-        <option value="WI">WI</option>
-        <option value="WY">WY</option>
-</select>`;
-  }
+  const stateOptions = state.sort().map((p) => {
+    return ` <option value="${p}">${p == "*" ? "All states" : p}</option>`;
+  });
 
   return `
       <select name="state" id="state">
       <option value="" selected disabled>Select a state</option>
-                      ${stateOptions}
-                       </select>
-                     <label for="state">States</label>
-   `;
+      ${stateOptions}
+      </select>
+    <label for="state">States</label>
+  `;
 };
 
 export default async () => {
@@ -134,6 +75,8 @@ export default async () => {
   const alertBox = document.getElementById("alertBox");
   const resultSection = divElement.querySelector("#resultSection");
   const resultLength = divElement.querySelector("#resultLength");
+  const periodDropdown = divElement.querySelector("#period");
+  const requestAgain = divElement.querySelector("#requestAgain");
 
   const birthdateInput = divElement.querySelector("#birthdate");
   const plansDropdown = divElement.querySelector("#plans");
@@ -171,6 +114,15 @@ export default async () => {
     enableSubmitButton();
   });
 
+  requestAgain.addEventListener("click", (event) => {
+    birthdateInput.value = "";
+    ageInput.value = "";
+    submitButton.disabled = true;
+
+    queryForm.classList.remove("hidden");
+    queryResult.classList.add("hidden");
+  });
+
   statesDropdown.addEventListener("change", (event) => {
     statesDropdown.value = event.target.value;
     enableSubmitButton();
@@ -180,6 +132,23 @@ export default async () => {
     birthdateInput.value = `${ageToBirthday(event.target.value)}-01-01`;
 
     enableSubmitButton();
+  });
+
+  periodDropdown.addEventListener("change", (event) => {
+    const resultFieldPremium = divElement.querySelectorAll(
+      '[name="result-field-premium"]'
+    );
+    const resultFieldMonthly = divElement.querySelectorAll(
+      '[name="result-field-monthly"]'
+    );
+    const resultFieldAnnual = divElement.querySelectorAll(
+      '[name="result-field-annual"]'
+    );
+
+    resultFieldPremium.forEach((field, index) => {
+      resultFieldMonthly[index].value = field.value * event.target.value;
+      resultFieldAnnual[index].value = field.value * 12 * event.target.value;
+    });
   });
 
   ageInput.oninput = function () {
@@ -203,6 +172,7 @@ export default async () => {
 
     const requestResult = await request(raw, loader);
     if (!requestResult[0]) {
+      alertBox.style.display = "block";
       alertBox.innerHTML = `<div class="alert">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <strong>No results found!</strong> ${String(requestResult).substring(6)}
@@ -211,13 +181,13 @@ export default async () => {
     }
     queryForm.classList.add("hidden");
     queryResult.classList.remove("hidden");
-    alertBox.style.display = "none"
+    alertBox.style.display = "none";
 
-    const renderedResults = renderResults(requestResult)
+    const renderedResults = renderResults(requestResult);
 
-    resultLength.innerHTML = requestResult.length
-    resultSection.innerHTML = renderedResults
-});
+    resultLength.innerHTML = requestResult.length;
+    resultSection.innerHTML = renderedResults;
+  });
 
   plansDropdown.innerHTML = renderedPlansDrowpdown;
   statesDropdown.innerHTML = renderedStateDrowpdown;

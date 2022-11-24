@@ -33,7 +33,7 @@ Premium calculator uses a couple of open source projects to work properly:
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v18+ and npm to run.
+Premium calculator requires [Node.js](https://nodejs.org/) v18+ and npm to run.
 
 Install the devDependencies with npm in root.
 
